@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled, { ThemeProps } from 'styled-components/macro';
-import { SpacingType } from 'src/theme';
+import { SpacingType, ColorType, colors } from 'src/theme';
 
 const Block = styled.div`
     background-color: ${({
@@ -9,15 +9,24 @@ const Block = styled.div`
             colors,
             colors: { white },
         },
-    }: any) => (color ? colors[`${color}`] : white)};
+    }: {
+        theme: any;
+        color: ColorType;
+    }) => (color ? colors[`${color}`] : white)};
 `;
 
 type Props = {
-    color?: string;
+    color?: ColorType;
 };
 
 export const ColorBlock: FunctionComponent<Props> = ({ color, children }) => {
-    return <Block color={color}>{children}</Block>;
+    return (
+        <Block color={color || 'white'}>
+            <VerticalSpacer size='extraLarge' />
+            {children}
+            <VerticalSpacer size='extraExtraLarge' />
+        </Block>
+    );
 };
 
 export const ContentWrapper = styled.div`

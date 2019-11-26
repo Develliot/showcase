@@ -17,17 +17,34 @@ export const breakpoints = {
 
 export const globalPadding = '10vw';
 
-export type SpacingType = 'tiny' | 'small' | 'medium' | 'large' | 'extraLarge';
+export type SpacingType =
+    | 'tiny'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'extraLarge'
+    | 'extraExtraLarge';
+
 export const spacing: { [key in SpacingType]: string } = {
     tiny: '0.5rem',
     small: '1rem',
     medium: '1.5rem',
     large: '3rem',
     extraLarge: '4rem',
+    extraExtraLarge: '8rem',
 };
+
+export type ColorType =
+    | 'white'
+    | 'darkGrey'
+    | 'lightGrey'
+    | 'blue'
+    | 'pink'
+    | 'yellow';
 
 export const colors: { [key: string]: string } = {
     white: '#F3F7F0',
+    lightGrey: '#d4d4d4',
     darkGrey: '#343434',
     blue: '#1B4965',
     pink: '#A93F55',

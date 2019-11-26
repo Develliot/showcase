@@ -3,8 +3,12 @@ import styled from 'styled-components/macro';
 
 import { colors } from 'src/theme';
 import { PageWrapper, PageContent } from 'src/pages/styles';
-import { ContentWrapper, VerticalSpacer } from 'src/components/Layout';
-import { H1, H2, Span } from 'src/components/Typography';
+import {
+    ContentWrapper,
+    VerticalSpacer,
+    ColorBlock,
+} from 'src/components/Layout';
+import { H1, H2, H3, Span, Paragraph } from 'src/components/Typography';
 
 const colorLabelList = Object.keys(colors);
 
@@ -65,27 +69,46 @@ export const DesignSystem = () => {
     return (
         <PageWrapper>
             <PageContent>
-                <VerticalSpacer size='extraLarge' />
-                <ContentWrapper>
-                    <H1>Design System</H1>
-                    <H2>Colours</H2>
-                    <TilesWrapper>
-                        <FlexWrapRow>
-                            {colorLabelList.map(color => (
-                                <ColorTileWrapper key={color}>
-                                    <ColorTile color={colors[`${color}`]}>
-                                        <ColorLabelWrapper>
-                                            <Span>
-                                                {camelCaseToSentenceCase(color)}
-                                                : {colors[`${color}`]}
-                                            </Span>
-                                        </ColorLabelWrapper>
-                                    </ColorTile>
-                                </ColorTileWrapper>
-                            ))}
-                        </FlexWrapRow>
-                    </TilesWrapper>
-                </ContentWrapper>
+                <ColorBlock>
+                    <VerticalSpacer size='extraExtraLarge' />
+                    <ContentWrapper>
+                        <VerticalSpacer size='extraLarge' />
+                        <H1>Design System</H1>
+                        <VerticalSpacer size='large' />
+                        <H2>Colours</H2>
+                        <VerticalSpacer size='large' />
+                        <TilesWrapper>
+                            <FlexWrapRow>
+                                {colorLabelList.map(color => (
+                                    <ColorTileWrapper key={color}>
+                                        <ColorTile color={colors[`${color}`]}>
+                                            <ColorLabelWrapper>
+                                                <Span>
+                                                    {camelCaseToSentenceCase(
+                                                        color
+                                                    )}
+                                                    : {colors[`${color}`]}
+                                                </Span>
+                                            </ColorLabelWrapper>
+                                        </ColorTile>
+                                    </ColorTileWrapper>
+                                ))}
+                            </FlexWrapRow>
+                        </TilesWrapper>
+
+                        <VerticalSpacer size='extraExtraLarge' />
+
+                        <H2>Typography</H2>
+                        <VerticalSpacer size='large' />
+                        <H1>H1 Example text</H1>
+                        <VerticalSpacer size='large' />
+                        <H2>H2 Example text</H2>
+                        <VerticalSpacer size='large' />
+                        <H3>H3 Example text</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph>Paragraph example text</Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
             </PageContent>
         </PageWrapper>
     );

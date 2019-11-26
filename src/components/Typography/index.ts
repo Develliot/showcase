@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { colors, fontSizes } from 'src/theme';
+import { colors, fontSizes, ColorType } from 'src/theme';
 
 type baseTextProps = {
     color?: string;
@@ -17,11 +17,12 @@ type baseTextProps = {
 
 const baseText = (props: baseTextProps) => `
     font-family: 'Quicksand', sans-serif;
-    color: ${props.color ? props.color : colors.darkGrey}
-    textAlign = ${props.textAlign ? props.textAlign : 'left'}
+    color: ${props.color ? colors[`${props.color}`] : colors.darkGrey};
+    textAlign = ${props.textAlign ? props.textAlign : 'left'};
     font-size: ${
         props.fontSize ? fontSizes[`${props.fontSize}`] : fontSizes.medium
-    }
+    };
+    line-height: 1.5em;
 `;
 
 export const Span = styled.span`
@@ -30,23 +31,13 @@ export const Span = styled.span`
 
 export const Paragraph = styled.p`
     ${props => baseText(props)}
-    padding-bottom: ${({
-        theme: {
-            fontSizes: { medium },
-        },
-    }) => medium};
+    max-width: 700px;
 `;
 
 export const H1 = styled.h1`
     ${props => baseText(props)}
     text-transform: uppercase;
     font-weight: 700;
-    padding-bottom: ${({
-        fontSize,
-        theme: {
-            fontSizes: { extraExtraExtraLarge },
-        },
-    }: any) => (fontSize ? fontSize : extraExtraExtraLarge)};
     font-size: ${({
         fontSize,
         theme: {
@@ -55,20 +46,26 @@ export const H1 = styled.h1`
     }: any) => (fontSize ? fontSize : extraExtraExtraLarge)};
 `;
 
-export const H2 = styled.h1`
+export const H2 = styled.h2`
     ${props => baseText(props)}
     text-transform: uppercase;
     font-weight: 500;
-    padding-bottom: ${({
-        fontSize,
-        theme: {
-            fontSizes: { extraExtraLarge },
-        },
-    }: any) => (fontSize ? fontSize : extraExtraLarge)};
     font-size: ${({
         fontSize,
         theme: {
             fontSizes: { extraExtraLarge },
         },
     }: any) => (fontSize ? fontSize : extraExtraLarge)};
+`;
+
+export const H3 = styled.h3`
+    ${props => baseText(props)}
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: ${({
+        fontSize,
+        theme: {
+            fontSizes: { extraLarge },
+        },
+    }: any) => (fontSize ? fontSize : extraLarge)};
 `;

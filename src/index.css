@@ -452,6 +452,7 @@ code {
 }
 
 body {
+    overscroll-behavior: none;
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
@@ -459,4 +460,5 @@ body {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #d4d4d4;
 }
