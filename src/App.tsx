@@ -1,13 +1,16 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import Home from 'src/components/Home';
-import theme from 'src/theme';
+
+import Routes from 'src/Routes';
+import Header from 'src/components/Header';
 
 const App: React.FC = () => {
     return (
-        <ThemeProvider theme={theme}>
-            <Home />
-        </ThemeProvider>
+        <>
+            <Header />
+            <Routes />
+
+            {/* TODO FOOTER */}
+        </>
     );
 };
 
