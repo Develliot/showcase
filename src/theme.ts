@@ -8,7 +8,7 @@ export const fontSizes: { [key: string]: string } = {
     large: '1.125rem',
     extraLarge: '1.25rem',
     extraExtraLarge: '1.5rem',
-    extraExtraExtraLarge: '2rem',
+    extraExtraExtraLarge: '3rem',
 };
 
 export const breakpoints = {
@@ -17,12 +17,13 @@ export const breakpoints = {
 
 export const globalPadding = '10vw';
 
-export const spacing = {
-    tiny: '8px',
-    small: '16px',
-    medium: '24px',
-    large: '48px',
-    extraLarge: '64px',
+export type SpacingType = 'tiny' | 'small' | 'medium' | 'large' | 'extraLarge';
+export const spacing: { [key in SpacingType]: string } = {
+    tiny: '0.5rem',
+    small: '1rem',
+    medium: '1.5rem',
+    large: '3rem',
+    extraLarge: '4rem',
 };
 
 export const colors: { [key: string]: string } = {

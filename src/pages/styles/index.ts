@@ -15,7 +15,3 @@ export const PageContent = styled.div`
     }) => large};
     margin: 0 auto;
 `;
-
-export const ContentWrapper = styled.div`
-    padding: ${({ theme: { globalPadding } }) => `0 ${globalPadding}`};
-`;
