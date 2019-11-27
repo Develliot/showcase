@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { H1, H2, Paragraph } from 'src/components/Typography';
 import { PageWrapper, PageContent } from 'src/pages/styles';
@@ -9,6 +10,10 @@ import {
     ColorBlock,
 } from 'src/components/Layout';
 import { RobotAnimation } from 'src/components/RobotAnimation';
+
+const ContentWrapperFloating = styled(ContentWrapper)`
+    position: absolute;
+`;
 
 export const Home = () => {
     return (
@@ -22,10 +27,10 @@ export const Home = () => {
                         <Paragraph>
                             Welcome to my front-end showcase. I originally
                             created this site to try out TypeScript instead of
-                            using Flow. This was also an exersise to see if I
-                            could make a website usinging pure functional
-                            components and hooks withouut using classes and
-                            their lifecycle functions.
+                            using Flow. This was also an exersice to see if I
+                            could make a website using pure functional
+                            components and hooks without using classes and their
+                            lifecycle functions.
                         </Paragraph>
                     </ContentWrapper>
                 </ColorBlock>

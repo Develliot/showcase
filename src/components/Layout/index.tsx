@@ -38,6 +38,11 @@ export const ContentWrapper = styled.div`
     padding: ${({ theme: { globalPadding } }) => `0 ${globalPadding}`};
 `;
 
+export const ContentWrapperFloating = styled(ContentWrapper)`
+    position: absolute;
+    z-index: 2;
+`;
+
 export const VerticalSpacer = styled.div`
     height: ${({
         size,

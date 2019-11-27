@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ContentWrapper, VerticalSpacer } from 'src/components/Layout';
 
-import { H2 } from 'src/components/Typography';
+import { H2, Paragraph } from 'src/components/Typography';
 
 const keyFrameWheelWobble = keyframes`
     0% {
@@ -131,10 +131,19 @@ const keyFrameJourney = keyframes`
         transform: translate(-1000px, 200%) rotate(0deg)
     }
 `;
+const ContentWrapperFloating = styled(ContentWrapper)`
+    position: absolute;
+    z-index: 2;
+    background: ${({
+        theme: {
+            colors: { blue },
+        },
+    }) => `linear-gradient(to bottom, ${blue} 85%, rgba(0,0,0,0)) 15%`};
+`;
 
 const RobotWrapper = styled.div`
     position: relative;
-    height: 400px;
+    height: 600px;
     width: 100%;
     overflow: hidden;
     z-index: 0;
@@ -146,6 +155,7 @@ const WholeRobot = styled.div`
     left: calc(50% - 200px / 2);
     bottom: 0;
     animation: ${keyFrameJourney} 10s linear 0s infinite;
+    z-index: 1;
 `;
 
 const Neck = styled.div`
@@ -332,10 +342,20 @@ export const RobotAnimation = () => {
                     </Face>
                 </Head>
             </WholeRobot>
-            <ContentWrapper>
+            <ContentWrapperFloating>
                 <VerticalSpacer size='extraLarge' />
                 <H2 color='white'>A Robot</H2>
-            </ContentWrapper>
+                <VerticalSpacer size='medium' />
+                <Paragraph color='white'>
+                    It turns out that finding a decent animation libray that
+                    will play ball with typscript and react hooks is actaully a
+                    big ask. Those that do interesting tweens seem to rely on
+                    dom events. All the others don't seems to doing anything
+                    that css3 animations can't do out of the box. So I made this
+                    animation is plain old css.
+                </Paragraph>
+                <VerticalSpacer size='small' />
+            </ContentWrapperFloating>
         </RobotWrapper>
     );
 };

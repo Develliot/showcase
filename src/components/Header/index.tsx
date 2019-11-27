@@ -138,45 +138,42 @@ const Header = () => {
         300
     );
 
-    return useMemo(
-        () => (
-            <HeaderWrapper visible={hideOnScroll}>
-                <HeaderInner>
-                    <H2 color='white'>Showcase</H2>
-                    <VerticalSpacer size='medium' />
-                    <nav>
-                        <Links>
-                            <li>
-                                <NavLinkStyled
-                                    exact={true}
-                                    to={urls.home}
-                                    activeClassName='selected'
-                                >
-                                    <Paragraph color='white'>Home</Paragraph>
-                                    <RowCenter>
-                                        <HoverInidcator />
-                                    </RowCenter>
-                                </NavLinkStyled>
-                            </li>
-                            <li>
-                                <NavLinkStyled
-                                    to={urls.designSystem}
-                                    activeClassName='selected'
-                                >
-                                    <Paragraph color='white'>
-                                        Design System
-                                    </Paragraph>
-                                    <RowCenter>
-                                        <HoverInidcator />
-                                    </RowCenter>
-                                </NavLinkStyled>
-                            </li>
-                        </Links>
-                    </nav>
-                </HeaderInner>
-            </HeaderWrapper>
-        ),
-        [hideOnScroll]
+    return (
+        <HeaderWrapper visible={hideOnScroll}>
+            <HeaderInner>
+                <H2 color='white'>Showcase</H2>
+                <VerticalSpacer size='medium' />
+                <nav>
+                    <Links>
+                        <li>
+                            <NavLinkStyled
+                                exact={true}
+                                to={urls.home}
+                                activeClassName='selected'
+                            >
+                                <Paragraph color='white'>Home</Paragraph>
+                                <RowCenter>
+                                    <HoverInidcator />
+                                </RowCenter>
+                            </NavLinkStyled>
+                        </li>
+                        <li>
+                            <NavLinkStyled
+                                to={urls.designSystem}
+                                activeClassName='selected'
+                            >
+                                <Paragraph color='white'>
+                                    Design System
+                                </Paragraph>
+                                <RowCenter>
+                                    <HoverInidcator />
+                                </RowCenter>
+                            </NavLinkStyled>
+                        </li>
+                    </Links>
+                </nav>
+            </HeaderInner>
+        </HeaderWrapper>
     );
 };
 
