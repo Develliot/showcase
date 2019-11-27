@@ -2,22 +2,22 @@ import React from 'react';
 
 import { H1, H2, Paragraph } from 'src/components/Typography';
 import { PageWrapper, PageContent } from 'src/pages/styles';
+import AnitmatedContentWrapper from 'src/components/AnitmatedContentWrapper';
 import {
     ContentWrapper,
     VerticalSpacer,
     ColorBlock,
 } from 'src/components/Layout';
+import { RobotAnimation } from 'src/components/RobotAnimation';
 
 export const Home = () => {
     return (
         <PageWrapper>
             <PageContent>
                 <ColorBlock>
-                    <VerticalSpacer size='extraExtraLarge' />
                     <ContentWrapper>
-                        <VerticalSpacer size='extraLarge' />
+                        <VerticalSpacer size='extraExtraLarge' />
                         <H1> welcome</H1>
-
                         <VerticalSpacer size='large' />
                         <Paragraph>
                             Welcome to my front-end showcase. I originally
@@ -30,31 +30,15 @@ export const Home = () => {
                     </ContentWrapper>
                 </ColorBlock>
 
-                <ColorBlock color='blue'>
-                    <ContentWrapper>
-                        <H2 color='white'> under the hood</H2>
-
-                        <VerticalSpacer size='large' />
-                        <Paragraph color='white'>
-                            React
-                            <br />
-                            React Router
-                            <br />
-                            Typescript
-                            <br />
-                            Styled components
-                            <br />
-                            Prettier
-                            <br />
-                        </Paragraph>
-                    </ContentWrapper>
+                <ColorBlock color='blue' padding={false}>
+                    <RobotAnimation />
                 </ColorBlock>
 
                 <ColorBlock color='darkGrey'>
-                    <ContentWrapper>
+                    <AnitmatedContentWrapper>
                         <H2 color='white'> under the hood</H2>
 
-                        <VerticalSpacer size='large' />
+                        <VerticalSpacer size='medium' />
                         <Paragraph color='white'>
                             React
                             <br />
@@ -67,7 +51,7 @@ export const Home = () => {
                             Prettier
                             <br />
                         </Paragraph>
-                    </ContentWrapper>
+                    </AnitmatedContentWrapper>
                 </ColorBlock>
             </PageContent>
         </PageWrapper>

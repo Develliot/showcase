@@ -5,7 +5,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { useScrollPosition } from 'src/hooks/UseScrollPosition';
 import urls from 'src/urls';
 
-import { H2 } from 'src/components/Typography';
+import { H2, Paragraph } from 'src/components/Typography';
 import { VerticalSpacer } from '../Layout';
 
 const HeaderWrapper = styled.header`
@@ -24,6 +24,7 @@ const HeaderWrapper = styled.header`
     margin-top: ${({ visible }: { visible: boolean }) =>
         visible ? `0` : `-100px`};
     opacity: ${({ visible }: { visible: boolean }) => (visible ? `1` : `0`)};
+    z-index: 10;
 `;
 
 const HeaderInner = styled.div`
@@ -56,31 +57,64 @@ const Links = styled.ul`
 
     li {
         padding: 0;
-        margin: 0;
+        margin: ${({
+            theme: {
+                spacing: { small },
+            },
+        }) => `0 ${small} 0 0`};
     }
 `;
 
+const HoverInidcator = styled.div`
+    height: 3px;
+    background-color: ${({
+        theme: {
+            colors: { yellow },
+        },
+    }) => yellow};
+    margin-top: ${({
+        theme: {
+            spacing: { tiny },
+        },
+    }) => tiny};
+    width: 100%;
+    max-width: 0;
+    transition: max-width ease 0.3s;
+`;
+
+const RowCenter = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+
 const NavLinkStyled = styled(NavLink)`
-    padding: ${({
-        theme: {
-            spacing: { medium },
-        },
-    }) => `0 ${medium} 0 0`};
-    color: ${({
-        theme: {
-            colors: { white },
-        },
-    }) => white};
     text-decoration: none;
-    transition: color ease 0.3s;
-    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    ${Paragraph} {
+        transition: color ease 0.3s;
+        font-weight: 600;
+    }
 
     &.selected {
-        color: ${({
-            theme: {
-                colors: { yellow },
-            },
-        }) => yellow};
+        ${HoverInidcator} {
+            max-width: 150px;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+
+        ${Paragraph} {
+            color: ${({
+                theme: {
+                    colors: { yellow },
+                },
+            }) => yellow};
+        }
     }
 `;
 
@@ -118,7 +152,10 @@ const Header = () => {
                                     to={urls.home}
                                     activeClassName='selected'
                                 >
-                                    Home
+                                    <Paragraph color='white'>Home</Paragraph>
+                                    <RowCenter>
+                                        <HoverInidcator />
+                                    </RowCenter>
                                 </NavLinkStyled>
                             </li>
                             <li>
@@ -126,7 +163,12 @@ const Header = () => {
                                     to={urls.designSystem}
                                     activeClassName='selected'
                                 >
-                                    Design System
+                                    <Paragraph color='white'>
+                                        Design System
+                                    </Paragraph>
+                                    <RowCenter>
+                                        <HoverInidcator />
+                                    </RowCenter>
                                 </NavLinkStyled>
                             </li>
                         </Links>

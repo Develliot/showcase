@@ -1,4 +1,10 @@
-import { useRef, useLayoutEffect, DependencyList, RefObject } from 'react';
+import {
+    useRef,
+    useLayoutEffect,
+    DependencyList,
+    RefObject,
+    MutableRefObject,
+} from 'react';
 
 const isBrowser = typeof window !== `undefined`;
 
@@ -6,7 +12,7 @@ function getScrollPosition({
     element,
     useWindow,
 }: {
-    element: RefObject<HTMLElement> | null;
+    element?: RefObject<HTMLElement> | MutableRefObject<undefined> | null;
     useWindow: boolean;
 }) {
     if (!isBrowser) return { x: 0, y: 0 };
@@ -24,7 +30,7 @@ function getScrollPosition({
 export function useScrollPosition(
     effect: any,
     deps: DependencyList,
-    element: RefObject<HTMLElement> | null,
+    element: RefObject<HTMLElement> | MutableRefObject<undefined> | null,
     useWindow: boolean,
     wait: number
 ) {
