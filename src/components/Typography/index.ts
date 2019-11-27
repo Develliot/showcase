@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { colors, fontSizes, ColorType } from 'src/theme';
+import { colors, fontSizes } from 'src/theme';
 
 type baseTextProps = {
     color?: string;

@@ -348,11 +348,11 @@ export const RobotAnimation = () => {
                 <VerticalSpacer size='medium' />
                 <Paragraph color='white'>
                     It turns out that finding a decent animation libray that
-                    will play ball with typscript and react hooks is actaully a
+                    will play ball with TypeScript and React hooks is actaully a
                     big ask. Those that do interesting tweens seem to rely on
-                    dom events. All the others don't seems to doing anything
-                    that css3 animations can't do out of the box. So I made this
-                    animation is plain old css.
+                    DOM events. All the others don't seem to do anything that
+                    CSS3 animations can't do out of the box. So I made this
+                    animation in plain old CSS.
                 </Paragraph>
                 <VerticalSpacer size='small' />
             </ContentWrapperFloating>

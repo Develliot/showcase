@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import urls from 'src/urls';
 
@@ -10,7 +10,8 @@ export const Routes: React.FC = () => {
     return (
         <Switch>
             <Route path={urls.designSystem} component={DesignSystem}></Route>
-            <Route path={urls.home} component={Home}></Route>
+            <Route exact={true} path={urls.home} component={Home}></Route>
+            <Redirect from='/' to={urls.home} />
             {/* TODO 404 */}
             {/* <Route path="*">
                     <NoMatch />

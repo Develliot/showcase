@@ -49,6 +49,7 @@ export function useScrollPosition(
         const handleScroll = () => {
             if (wait) {
                 if (throttleTimeout === null) {
+                    // eslint-disable-next-line
                     throttleTimeout = setTimeout(callBack, wait);
                 }
             } else {

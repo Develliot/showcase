@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import styled, { ThemeProps } from 'styled-components/macro';
-import { SpacingType, ColorType, colors } from 'src/theme';
+import styled from 'styled-components/macro';
+import { SpacingType, ColorType } from 'src/theme';
 
 const Block = styled.div`
     background-color: ${({
@@ -36,11 +36,6 @@ export const ColorBlock: FunctionComponent<Props> = ({
 
 export const ContentWrapper = styled.div`
     padding: ${({ theme: { globalPadding } }) => `0 ${globalPadding}`};
-`;
-
-export const ContentWrapperFloating = styled(ContentWrapper)`
-    position: absolute;
-    z-index: 2;
 `;
 
 export const VerticalSpacer = styled.div`

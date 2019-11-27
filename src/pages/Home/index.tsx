@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { H1, H2, Paragraph } from 'src/components/Typography';
 import { PageWrapper, PageContent } from 'src/pages/styles';
@@ -10,10 +9,6 @@ import {
     ColorBlock,
 } from 'src/components/Layout';
 import { RobotAnimation } from 'src/components/RobotAnimation';
-
-const ContentWrapperFloating = styled(ContentWrapper)`
-    position: absolute;
-`;
 
 export const Home = () => {
     return (
