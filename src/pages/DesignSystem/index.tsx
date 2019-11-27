@@ -72,7 +72,6 @@ export const DesignSystem = () => {
                 <ColorBlock>
                     <VerticalSpacer size='extraExtraLarge' />
                     <ContentWrapper>
-                        <VerticalSpacer size='extraLarge' />
                         <H1>Design System</H1>
                         <VerticalSpacer size='large' />
                         <H2>Colours</H2>
@@ -95,18 +94,22 @@ export const DesignSystem = () => {
                                 ))}
                             </FlexWrapRow>
                         </TilesWrapper>
-
-                        <VerticalSpacer size='extraExtraLarge' />
-
-                        <H2>Typography</H2>
+                    </ContentWrapper>
+                </ColorBlock>
+                <ColorBlock color='pink'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H2 color='white'>Typography</H2>
                         <VerticalSpacer size='large' />
-                        <H1>H1 Example text</H1>
+                        <H1 color='white'>H1 Example text</H1>
                         <VerticalSpacer size='large' />
-                        <H2>H2 Example text</H2>
+                        <H2 color='white'>H2 Example text</H2>
                         <VerticalSpacer size='large' />
-                        <H3>H3 Example text</H3>
+                        <H3 color='white'>H3 Example text</H3>
                         <VerticalSpacer size='large' />
-                        <Paragraph>Paragraph example text</Paragraph>
+                        <Paragraph color='white'>
+                            Paragraph example text
+                        </Paragraph>
                     </ContentWrapper>
                 </ColorBlock>
             </PageContent>

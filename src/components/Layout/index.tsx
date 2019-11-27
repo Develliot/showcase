@@ -17,14 +17,19 @@ const Block = styled.div`
 
 type Props = {
     color?: ColorType;
+    padding?: boolean;
 };
 
-export const ColorBlock: FunctionComponent<Props> = ({ color, children }) => {
+export const ColorBlock: FunctionComponent<Props> = ({
+    color,
+    padding = true,
+    children,
+}) => {
     return (
         <Block color={color || 'white'}>
-            <VerticalSpacer size='extraLarge' />
+            {padding && <VerticalSpacer size='extraLarge' />}
             {children}
-            <VerticalSpacer size='extraExtraLarge' />
+            {padding && <VerticalSpacer size='extraExtraLarge' />}
         </Block>
     );
 };

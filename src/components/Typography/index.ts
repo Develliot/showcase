@@ -31,7 +31,7 @@ export const Span = styled.span`
 
 export const Paragraph = styled.p`
     ${props => baseText(props)}
-    max-width: 700px;
+    max-width: 600px;
 `;
 
 export const H1 = styled.h1`
