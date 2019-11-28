@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import { withRouter } from 'react-router-dom';
 
 import { useScrollPosition } from 'src/hooks/UseScrollPosition';
 import urls from 'src/urls';
@@ -14,7 +13,47 @@ import {
     HoverInidcator,
 } from './styles';
 
-const Header = () => {
+export const Header = ({ visible }: { visible: boolean }) => {
+    return (
+        <HeaderWrapper visible={visible}>
+            <HeaderInner>
+                <H2 color='white'>Showcase</H2>
+                <VerticalSpacer size='medium' />
+                <nav>
+                    <Links>
+                        <li>
+                            <NavLinkStyled
+                                exact={true}
+                                to={urls.home}
+                                activeClassName='selected'
+                            >
+                                <Paragraph color='white'>Home</Paragraph>
+                                <RowCenter>
+                                    <HoverInidcator />
+                                </RowCenter>
+                            </NavLinkStyled>
+                        </li>
+                        <li>
+                            <NavLinkStyled
+                                to={urls.designSystem}
+                                activeClassName='selected'
+                            >
+                                <Paragraph color='white'>
+                                    Design System
+                                </Paragraph>
+                                <RowCenter>
+                                    <HoverInidcator />
+                                </RowCenter>
+                            </NavLinkStyled>
+                        </li>
+                    </Links>
+                </nav>
+            </HeaderInner>
+        </HeaderWrapper>
+    );
+};
+
+export const HideOnScroll = () => {
     const [hideOnScroll, setHideOnScroll] = useState(true);
 
     useScrollPosition(
@@ -34,46 +73,7 @@ const Header = () => {
         300
     );
 
-    return useMemo(
-        () => (
-            <HeaderWrapper visible={hideOnScroll}>
-                <HeaderInner>
-                    <H2 color='white'>Showcase</H2>
-                    <VerticalSpacer size='medium' />
-                    <nav>
-                        <Links>
-                            <li>
-                                <NavLinkStyled
-                                    exact={true}
-                                    to={urls.home}
-                                    activeClassName='selected'
-                                >
-                                    <Paragraph color='white'>Home</Paragraph>
-                                    <RowCenter>
-                                        <HoverInidcator />
-                                    </RowCenter>
-                                </NavLinkStyled>
-                            </li>
-                            <li>
-                                <NavLinkStyled
-                                    to={urls.designSystem}
-                                    activeClassName='selected'
-                                >
-                                    <Paragraph color='white'>
-                                        Design System
-                                    </Paragraph>
-                                    <RowCenter>
-                                        <HoverInidcator />
-                                    </RowCenter>
-                                </NavLinkStyled>
-                            </li>
-                        </Links>
-                    </nav>
-                </HeaderInner>
-            </HeaderWrapper>
-        ),
-        [hideOnScroll]
-    );
+    return useMemo(() => <Header visible={hideOnScroll} />, [hideOnScroll]);
 };
 
-export default withRouter(Header);
+export default HideOnScroll;

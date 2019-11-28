@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders visible 1`] = `
+<styles__HeaderWrapper
+  visible={true}
+>
+  <styles__HeaderInner>
+    <Typography__H2
+      color="white"
+    >
+      Showcase
+    </Typography__H2>
+    <Layout__VerticalSpacer
+      size="medium"
+    />
+    <nav>
+      <styles__Links>
+        <li>
+          <styles__NavLinkStyled
+            activeClassName="selected"
+            exact={true}
+            to="/showcase/"
+          >
+            <Typography__Paragraph
+              color="white"
+            >
+              Home
+            </Typography__Paragraph>
+            <Layout__RowCenter>
+              <styles__HoverInidcator />
+            </Layout__RowCenter>
+          </styles__NavLinkStyled>
+        </li>
+        <li>
+          <styles__NavLinkStyled
+            activeClassName="selected"
+            to="/showcase/designSystem"
+          >
+            <Typography__Paragraph
+              color="white"
+            >
+              Design System
+            </Typography__Paragraph>
+            <Layout__RowCenter>
+              <styles__HoverInidcator />
+            </Layout__RowCenter>
+          </styles__NavLinkStyled>
+        </li>
+      </styles__Links>
+    </nav>
+  </styles__HeaderInner>
+</styles__HeaderWrapper>
+`;

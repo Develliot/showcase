@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div />
+    <styled.div />
+    <styled.div />
+    <styled.div />
+    <styled.div />
+    <styled.div>
+      <styled.div />
+      <styled.div />
+    </styled.div>
+    <styled.div />
+    <styled.div>
+      <styled.div />
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <styled.div />
+        <Styled(styled.div) />
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <Styled(Layout__ContentWrapper)>
+    <Layout__VerticalSpacer
+      size="extraLarge"
+    />
+    <Typography__H2
+      color="white"
+    >
+      A Robot
+    </Typography__H2>
+    <Layout__VerticalSpacer
+      size="medium"
+    />
+    <Typography__Paragraph
+      color="white"
+    >
+      It turns out that finding a decent animation libray that will play ball with TypeScript and React hooks is actaully a big ask. Those that do interesting tweens seem to rely on DOM events. All the others don't seem to do anything that CSS3 animations can't do out of the box. So I made this animation in plain old CSS.
+    </Typography__Paragraph>
+    <Layout__VerticalSpacer
+      size="small"
+    />
+  </Styled(Layout__ContentWrapper)>
+</styled.div>
+`;
