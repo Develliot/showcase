@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { colors } from 'src/theme';
+import { camelCaseToCaptilalisedCase } from 'src/utils/StringUtils';
 import {
     PageWrapper,
     PageContent,
@@ -18,11 +19,6 @@ import {
 } from './styles';
 
 const colorLabelList = Object.keys(colors);
-
-const camelCaseToSentenceCase = (text: string): string => {
-    const result = text.replace(/([A-Z])/g, ' $1');
-    return result.charAt(0).toUpperCase() + result.slice(1);
-};
 
 export const DesignSystem = () => {
     return (
@@ -42,7 +38,7 @@ export const DesignSystem = () => {
                                         <ColorTile color={colors[`${color}`]}>
                                             <ColorLabelWrapper>
                                                 <Span>
-                                                    {camelCaseToSentenceCase(
+                                                    {camelCaseToCaptilalisedCase(
                                                         color
                                                     )}
                                                     : {colors[`${color}`]}
