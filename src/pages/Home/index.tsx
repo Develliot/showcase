@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { H1, H2, Paragraph } from 'src/components/Typography';
-import { PageWrapper, PageContent } from 'src/pages/styles';
+import { PageWrapper, PageContent } from 'src/components/Layout';
 import AnitmatedContentWrapper from 'src/components/AnitmatedContentWrapper';
 import {
     ContentWrapper,

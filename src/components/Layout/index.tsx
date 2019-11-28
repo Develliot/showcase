@@ -15,12 +15,12 @@ const Block = styled.div`
     }) => (color ? colors[`${color}`] : white)};
 `;
 
-type Props = {
+type BlockProps = {
     color?: ColorType;
     padding?: boolean;
 };
 
-export const ColorBlock: FunctionComponent<Props> = ({
+export const ColorBlock: FunctionComponent<BlockProps> = ({
     color,
     padding = true,
     children,
@@ -33,6 +33,33 @@ export const ColorBlock: FunctionComponent<Props> = ({
         </Block>
     );
 };
+
+export const PageWrapper = styled.div`
+    min-height: 100vh;
+    width: 100%;
+    background-color: ${({
+        theme: {
+            colors: { lightGrey },
+        },
+    }) => lightGrey};
+`;
+
+export const PageContent = styled.div`
+    width: 100%;
+    height: 100%;
+    max-width: ${({
+        theme: {
+            breakpoints: { large },
+        },
+    }) => large};
+    margin: 0 auto;
+`;
+
+export const RowCenter = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
 
 export const ContentWrapper = styled.div`
     padding: ${({ theme: { globalPadding } }) => `0 ${globalPadding}`};
