@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, FunctionComponent } from 'react';
 import { useScrollPosition } from 'src/hooks/UseScrollPosition';
 import { ContentWrapperStyled } from './styles';
 
-export const AnimatedContentWrapper = ({ children }: { children: any }) => {
+export const AnimatedContentWrapper: FunctionComponent = ({ children }) => {
     const [hideOnScroll, setHideOnScroll] = useState(true);
     const wrapperRef = useRef<HTMLDivElement>(null);
     const isBrowser = typeof window !== `undefined`;
