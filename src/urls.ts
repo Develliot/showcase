@@ -3,4 +3,5 @@
 export default {
     home: '/showcase/',
     designSystem: '/showcase/designSystem',
+    usingAPIs: '/showcase/usingAPIs',
 };
