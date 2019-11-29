@@ -89,10 +89,19 @@ const ButtonStyled = styled.button`
 `;
 type Props = {
     color?: ColorType;
+    onClick?: () => void;
 };
 
-export const Button: FunctionComponent<Props> = ({ color, children }) => {
-    return <ButtonStyled color={color || 'blue'}>{children}</ButtonStyled>;
+export const Button: FunctionComponent<Props> = ({
+    color,
+    onClick,
+    children,
+}) => {
+    return (
+        <ButtonStyled onClick={onClick} color={color || 'blue'}>
+            {children}
+        </ButtonStyled>
+    );
 };
 
 export default Button;

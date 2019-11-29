@@ -11,6 +11,8 @@ import {
 } from 'src/components/Layout';
 import { H1, H2, H3, Span, Paragraph } from 'src/components/Typography';
 import { Button } from 'src/components/Button';
+import { TextInput } from 'src/components/TextInput';
+
 import {
     TilesWrapper,
     ColorTile,
@@ -159,7 +161,12 @@ export const DesignSystem = () => {
                     <VerticalSpacer size='tiny' />
                     <ContentWrapper>
                         <VerticalSpacer size='large' />
-                        <H3 color='darkGrey'>From inputs</H3>
+                        <H3 color='darkGrey'>Form inputs</H3>
+                        <VerticalSpacer size='medium' />
+                        <TextInput
+                            name='textfield'
+                            labelText='Enter some text here:'
+                        />
                     </ContentWrapper>
                     <VerticalSpacer size='extraExtraLarge' />
                 </ColorBlock>

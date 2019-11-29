@@ -2,6 +2,7 @@ import React from 'react';
 
 import { H1, H2, Paragraph } from 'src/components/Typography';
 import { Button } from 'src/components/Button';
+import { TextInput } from 'src/components/TextInput';
 import { PageWrapper, PageContent } from 'src/components/Layout';
 // import AnitmatedContentWrapper from 'src/components/AnitmatedContentWrapper';
 import {
@@ -23,13 +24,13 @@ export const UsingAPIs = () => {
                         <VerticalSpacer size='large' />
                         <H2>Geocoding</H2>
                         <VerticalSpacer size='medium' />
-                        <form>
-                            <label>
-                                Enter a location:
-                                <input autofocus type='text' name='location' />
-                            </label>
-                            <Button onClick={handleClick}>Find location</Button>
-                        </form>
+
+                        <TextInput
+                            name='location'
+                            labelText='Enter a location'
+                        />
+                        <VerticalSpacer size='medium' />
+                        <Button onClick={handleClick}>Find location</Button>
                         <VerticalSpacer size='medium' />
                         <Paragraph>co-oridnate string</Paragraph>
                     </ContentWrapper>
