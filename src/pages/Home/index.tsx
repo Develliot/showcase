@@ -50,6 +50,7 @@ export const Home = () => {
                             <br />
                             Prettier
                             <br />
+                            Jest + Enzyme snapshot regression testing
                         </Paragraph>
                     </AnitmatedContentWrapper>
                 </ColorBlock>

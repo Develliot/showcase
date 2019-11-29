@@ -36,6 +36,9 @@ export const ColorTile = styled.div`
 `;
 
 export const ColorLabelWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     background-color: ${({
         theme: {
             colors: { white },

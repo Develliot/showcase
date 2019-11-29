@@ -10,6 +10,7 @@ import {
     ColorBlock,
 } from 'src/components/Layout';
 import { H1, H2, H3, Span, Paragraph } from 'src/components/Typography';
+import { Button } from 'src/components/Button';
 import {
     TilesWrapper,
     ColorTile,
@@ -41,7 +42,10 @@ export const DesignSystem = () => {
                                                     {camelCaseToCaptilalisedCase(
                                                         color
                                                     )}
-                                                    : {colors[`${color}`]}
+                                                    :
+                                                </Span>
+                                                <Span>
+                                                    {colors[`${color}`]}
                                                 </Span>
                                             </ColorLabelWrapper>
                                         </ColorTile>
@@ -51,7 +55,65 @@ export const DesignSystem = () => {
                         </TilesWrapper>
                     </ContentWrapper>
                 </ColorBlock>
+
+                <ColorBlock color='yellow'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H2 color='darkGrey'>Colour Sections</H2>
+                        <VerticalSpacer size='large' />
+                        <H3 color='darkGrey'>Yellow</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph color='darkGrey'>
+                            Example section text
+                        </Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='blue'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H3 color='white'>Blue</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph color='white'>
+                            Example section text
+                        </Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='white'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H3 color='darkGrey'>White</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph color='darkGrey'>
+                            Example section text
+                        </Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
+
                 <ColorBlock color='pink'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H3 color='white'>Pink</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph color='white'>
+                            Example section text
+                        </Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='darkGrey'>
+                    <VerticalSpacer size='medium' />
+                    <ContentWrapper>
+                        <H3 color='white'>Dark Grey</H3>
+                        <VerticalSpacer size='large' />
+                        <Paragraph color='white'>
+                            Example section text
+                        </Paragraph>
+                    </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='blue'>
                     <VerticalSpacer size='medium' />
                     <ContentWrapper>
                         <H2 color='white'>Typography</H2>
@@ -66,6 +128,40 @@ export const DesignSystem = () => {
                             Paragraph example text
                         </Paragraph>
                     </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='white' padding={false}>
+                    <VerticalSpacer size='extraLarge' />
+                    <ContentWrapper>
+                        <VerticalSpacer size='medium' />
+                        <H2 color='darkGrey'>Controls</H2>
+                        <VerticalSpacer size='large' />
+                        <H3 color='darkGrey'>Buttons</H3>
+                        <VerticalSpacer size='large' />
+                        <Button>Blue button (default)</Button>
+                        <VerticalSpacer size='small' />
+                        <Button color='pink'>Pink Button</Button>
+                        <VerticalSpacer size='small' />
+                        <Button color='darkGrey'>Dark Grey Button</Button>
+                        <VerticalSpacer size='tiny' />
+                    </ContentWrapper>
+                </ColorBlock>
+                <ColorBlock color='pink' padding={false}>
+                    <VerticalSpacer size='tiny' />
+                    <ContentWrapper>
+                        <Button color='yellow'>Yellow Button</Button>
+                        <VerticalSpacer size='small' />
+                        <Button color='white'>white Button</Button>
+                        <VerticalSpacer size='tiny' />
+                    </ContentWrapper>
+                </ColorBlock>
+                <ColorBlock color='white' padding={false}>
+                    <VerticalSpacer size='tiny' />
+                    <ContentWrapper>
+                        <VerticalSpacer size='large' />
+                        <H3 color='darkGrey'>From inputs</H3>
+                    </ContentWrapper>
+                    <VerticalSpacer size='extraExtraLarge' />
                 </ColorBlock>
             </PageContent>
         </PageWrapper>

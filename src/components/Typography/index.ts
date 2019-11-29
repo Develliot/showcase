@@ -18,7 +18,7 @@ type baseTextProps = {
 const baseText = (props: baseTextProps) => `
     font-family: 'Quicksand', sans-serif;
     color: ${props.color ? colors[`${props.color}`] : colors.darkGrey};
-    textAlign = ${props.textAlign ? props.textAlign : 'left'};
+    textAlign: ${props.textAlign ? props.textAlign : 'left'};
     font-size: ${
         props.fontSize ? fontSizes[`${props.fontSize}`] : fontSizes.medium
     };
@@ -49,7 +49,8 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     ${props => baseText(props)}
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.03rem;
     font-size: ${({
         fontSize,
         theme: {
@@ -61,7 +62,8 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
     ${props => baseText(props)}
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.03rem;
     font-size: ${({
         fontSize,
         theme: {
