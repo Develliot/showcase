@@ -3,15 +3,11 @@ import React, { useState, useMemo } from 'react';
 import { useScrollPosition } from 'src/hooks/UseScrollPosition';
 import urls from 'src/urls';
 
-import { H2, Paragraph } from 'src/components/Typography';
-import { VerticalSpacer, RowCenter } from 'src/components/Layout';
-import {
-    HeaderWrapper,
-    HeaderInner,
-    Links,
-    NavLinkStyled,
-    HoverInidcator,
-} from './styles';
+import { H2 } from 'src/components/Typography';
+import { VerticalSpacer } from 'src/components/Layout';
+import { HeaderWrapper, HeaderInner, Links } from './styles';
+
+import { HeaderNavLink } from 'src/components/HeaderNavLink';
 
 export const Header = ({ visible }: { visible: boolean }) => {
     return (
@@ -21,31 +17,16 @@ export const Header = ({ visible }: { visible: boolean }) => {
                 <VerticalSpacer size='medium' />
                 <nav>
                     <Links>
-                        <li>
-                            <NavLinkStyled
-                                exact={true}
-                                to={urls.home}
-                                activeClassName='selected'
-                            >
-                                <Paragraph color='white'>Home</Paragraph>
-                                <RowCenter>
-                                    <HoverInidcator />
-                                </RowCenter>
-                            </NavLinkStyled>
-                        </li>
-                        <li>
-                            <NavLinkStyled
-                                to={urls.designSystem}
-                                activeClassName='selected'
-                            >
-                                <Paragraph color='white'>
-                                    Design System
-                                </Paragraph>
-                                <RowCenter>
-                                    <HoverInidcator />
-                                </RowCenter>
-                            </NavLinkStyled>
-                        </li>
+                        <HeaderNavLink
+                            to={urls.home}
+                            title='Home'
+                            exact={true}
+                        />
+                        <HeaderNavLink
+                            to={urls.designSystem}
+                            title='Design System'
+                        />
+                        <HeaderNavLink to={urls.usingAPIs} title='Using APIs' />
                     </Links>
                 </nav>
             </HeaderInner>

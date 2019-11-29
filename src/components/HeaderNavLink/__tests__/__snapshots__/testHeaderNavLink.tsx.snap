@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component properly with "exact" undefined 1`] = `
+<styles__HeaderLinkItem>
+  <styles__NavLinkStyled
+    activeClassName="selected"
+    exact={false}
+    to="/page"
+  >
+    <Typography__Paragraph
+      color="white"
+    >
+      title
+    </Typography__Paragraph>
+    <Layout__RowCenter>
+      <styles__HoverInidcator />
+    </Layout__RowCenter>
+  </styles__NavLinkStyled>
+</styles__HeaderLinkItem>
+`;
+
+exports[`renders the component properly with all of its props 1`] = `
+<styles__HeaderLinkItem>
+  <styles__NavLinkStyled
+    activeClassName="selected"
+    exact={true}
+    to="/page"
+  >
+    <Typography__Paragraph
+      color="white"
+    >
+      title
+    </Typography__Paragraph>
+    <Layout__RowCenter>
+      <styles__HoverInidcator />
+    </Layout__RowCenter>
+  </styles__NavLinkStyled>
+</styles__HeaderLinkItem>
+`;
