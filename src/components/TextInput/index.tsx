@@ -20,3 +20,5 @@ export const TextInput = ({ name, labelText, required = false }: Props) => {
         </TextInputWrapper>
     );
 };
+
+export default TextInput;
