@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with a different color 1`] = `
+<styled.button
+  color="pink"
+  onClick={[Function]}
+>
+  <div>
+    Hello
+  </div>
+</styled.button>
+`;
+
+exports[`renders correctly with children 1`] = `
+<styled.button
+  color="blue"
+  onClick={[Function]}
+>
+  <div>
+    Hello
+  </div>
+  <div>
+    World
+  </div>
+</styled.button>
+`;
