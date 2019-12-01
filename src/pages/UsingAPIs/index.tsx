@@ -13,12 +13,12 @@ export const UsingAPIs = () => {
     return (
         <PageWrapper>
             <PageContent>
-                <ColorBlock>
+                <ColorBlock color='blue'>
                     <ContentWrapper>
                         <VerticalSpacer size='extraExtraLarge' />
-                        <H1>Using APIs</H1>
+                        <H1 color="white">Using APIs</H1>
                         <VerticalSpacer size='large' />
-                        <H2>Random User Data</H2>
+                        <H2 color="white">Random User Data</H2>
                         <VerticalSpacer size='medium' />
                         <Users />
                     </ContentWrapper>

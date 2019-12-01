@@ -55,9 +55,26 @@ export const PageContent = styled.div`
     margin: 0 auto;
 `;
 
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+`;
+
 export const RowCenter = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+`;
+
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`;
+export const ColumnCenter = styled.div`
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 `;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { colors, fontSizes } from 'src/theme';
 
-type baseTextProps = {
+type BaseTextProps = {
     color?: string;
     textAlign?: 'left' | 'right' | 'center';
     fontSize?:
@@ -13,9 +13,10 @@ type baseTextProps = {
         | 'extraLarge'
         | 'extraExtraLarge'
         | 'extraExtraExtraLarge';
+    bold?: boolean;
 };
 
-const baseText = (props: baseTextProps) => `
+const baseText = (props: BaseTextProps) => `
     font-family: 'Quicksand', sans-serif;
     color: ${props.color ? colors[`${props.color}`] : colors.darkGrey};
     textAlign: ${props.textAlign ? props.textAlign : 'left'};
@@ -23,19 +24,20 @@ const baseText = (props: baseTextProps) => `
         props.fontSize ? fontSizes[`${props.fontSize}`] : fontSizes.medium
     };
     line-height: 1.5em;
+    font-weight: ${!!props.bold ? 700 : 400};
 `;
 
 export const Span = styled.span`
-    ${props => baseText(props)}
+    ${(props: BaseTextProps) => baseText(props)}
 `;
 
 export const Paragraph = styled.p`
-    ${props => baseText(props)}
+    ${(props: BaseTextProps) => baseText(props)}
     max-width: 600px;
 `;
 
 export const H1 = styled.h1`
-    ${props => baseText(props)}
+    ${(props: BaseTextProps) => baseText(props)}
     text-transform: uppercase;
     font-weight: 700;
     font-size: ${({
@@ -47,7 +49,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-    ${props => baseText(props)}
+    ${(props: BaseTextProps) => baseText(props)}
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -0.03rem;
@@ -60,7 +62,7 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-    ${props => baseText(props)}
+    ${(props: BaseTextProps) => baseText(props)}
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: -0.03rem;
