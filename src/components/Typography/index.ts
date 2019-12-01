@@ -19,7 +19,7 @@ type BaseTextProps = {
 const baseText = (props: BaseTextProps) => `
     font-family: 'Quicksand', sans-serif;
     color: ${props.color ? colors[`${props.color}`] : colors.darkGrey};
-    textAlign: ${props.textAlign ? props.textAlign : 'left'};
+    text-align: ${props.textAlign ? props.textAlign : 'left'};
     font-size: ${
         props.fontSize ? fontSizes[`${props.fontSize}`] : fontSizes.medium
     };
