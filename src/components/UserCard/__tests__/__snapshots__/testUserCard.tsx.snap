@@ -1,85 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<UserCard__UserCardWrapper>
+<styles__UserCardWrapper>
   <Layout__RowCenter>
-    <UserCard__CoverColor
+    <styles__CoverColor
       color="#A93F55"
     >
       <Layout__RowCenter>
-        <UserCard__ImageWrapper>
-          <UserCard__ImageContainer
+        <styles__ImageWrapper>
+          <styles__ImageContainer
             src="https://randomuser.me/api/portraits/women/45.jpg"
           />
-        </UserCard__ImageWrapper>
+        </styles__ImageWrapper>
       </Layout__RowCenter>
-    </UserCard__CoverColor>
+    </styles__CoverColor>
   </Layout__RowCenter>
-  <UserCard__BottomHalf>
+  <styles__BottomHalf>
     <Layout__VerticalSpacer
       size="small"
     />
-    <Layout__RowCenter>
-      <Layout__ColumnCenter>
-        <Typography__H3>
-          Angela
-           
-          Castro
-        </Typography__H3>
-        <Layout__VerticalSpacer
-          size="small"
-        />
-        <Typography__Paragraph>
-          <Typography__Span
-            bold={true}
-          >
-            Email: 
-          </Typography__Span>
-           
-          angela.castro@example.com
-        </Typography__Paragraph>
-        <Typography__Paragraph>
-          <Typography__Span
-            bold={true}
-          >
-            Street: 
-          </Typography__Span>
-           
-          <Typography__Span>
-            8267
-             
-            Grove Road
-          </Typography__Span>
-        </Typography__Paragraph>
-        <Typography__Paragraph>
-          <Typography__Span
-            bold={true}
-          >
-            City: 
-          </Typography__Span>
-           
-          Stevenage
-        </Typography__Paragraph>
-        <Typography__Paragraph>
-          <Typography__Span
-            bold={true}
-          >
-            State: 
-          </Typography__Span>
-           
-          Durham
-        </Typography__Paragraph>
-        <Typography__Paragraph>
-          <Typography__Span
-            bold={true}
-          >
-            Postcode: 
-          </Typography__Span>
-           
-          BD18 8JD
-        </Typography__Paragraph>
-      </Layout__ColumnCenter>
-    </Layout__RowCenter>
-  </UserCard__BottomHalf>
-</UserCard__UserCardWrapper>
+    <Typography__H3>
+      Angela
+       
+      Castro
+    </Typography__H3>
+    <Layout__VerticalSpacer
+      size="small"
+    />
+    <Typography__Paragraph>
+      <Typography__Span
+        bold={true}
+      >
+        Email: 
+      </Typography__Span>
+       
+      angela.castro@example.com
+    </Typography__Paragraph>
+    <Typography__Paragraph>
+      <Typography__Span
+        bold={true}
+      >
+        Street: 
+      </Typography__Span>
+       
+      <Typography__Span>
+        8267
+         
+        Grove Road
+      </Typography__Span>
+    </Typography__Paragraph>
+    <Typography__Paragraph>
+      <Typography__Span
+        bold={true}
+      >
+        City: 
+      </Typography__Span>
+       
+      Stevenage
+    </Typography__Paragraph>
+    <Typography__Paragraph>
+      <Typography__Span
+        bold={true}
+      >
+        State: 
+      </Typography__Span>
+       
+      Durham
+    </Typography__Paragraph>
+    <Typography__Paragraph>
+      <Typography__Span
+        bold={true}
+      >
+        Postcode: 
+      </Typography__Span>
+       
+      BD18 8JD
+    </Typography__Paragraph>
+  </styles__BottomHalf>
+</styles__UserCardWrapper>
 `;
