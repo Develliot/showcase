@@ -59,22 +59,22 @@ export const UserCard = ({
                     {first} {last}
                 </H3>
                 <VerticalSpacer size='small' />
-                <Paragraph>
+                <Paragraph ellipsis={true}>
                     <Span bold={true}>Email: </Span> {email}
                 </Paragraph>
-                <Paragraph>
+                <Paragraph ellipsis={true}>
                     <Span bold={true}>Street: </Span>{' '}
                     <Span>
                         {street.number} {street.name}
                     </Span>
                 </Paragraph>
-                <Paragraph>
+                <Paragraph ellipsis={true}>
                     <Span bold={true}>City: </Span> {city}
                 </Paragraph>
-                <Paragraph>
+                <Paragraph ellipsis={true}>
                     <Span bold={true}>State: </Span> {state}
                 </Paragraph>
-                <Paragraph>
+                <Paragraph ellipsis={true}>
                     <Span bold={true}>Postcode: </Span> {postcode}
                 </Paragraph>
             </BottomHalf>

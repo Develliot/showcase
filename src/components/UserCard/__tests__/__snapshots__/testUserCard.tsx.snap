@@ -27,7 +27,9 @@ exports[`renders correctly 1`] = `
     <Layout__VerticalSpacer
       size="small"
     />
-    <Typography__Paragraph>
+    <Typography__Paragraph
+      ellipsis={true}
+    >
       <Typography__Span
         bold={true}
       >
@@ -36,7 +38,9 @@ exports[`renders correctly 1`] = `
        
       angela.castro@example.com
     </Typography__Paragraph>
-    <Typography__Paragraph>
+    <Typography__Paragraph
+      ellipsis={true}
+    >
       <Typography__Span
         bold={true}
       >
@@ -49,7 +53,9 @@ exports[`renders correctly 1`] = `
         Grove Road
       </Typography__Span>
     </Typography__Paragraph>
-    <Typography__Paragraph>
+    <Typography__Paragraph
+      ellipsis={true}
+    >
       <Typography__Span
         bold={true}
       >
@@ -58,7 +64,9 @@ exports[`renders correctly 1`] = `
        
       Stevenage
     </Typography__Paragraph>
-    <Typography__Paragraph>
+    <Typography__Paragraph
+      ellipsis={true}
+    >
       <Typography__Span
         bold={true}
       >
@@ -67,7 +75,9 @@ exports[`renders correctly 1`] = `
        
       Durham
     </Typography__Paragraph>
-    <Typography__Paragraph>
+    <Typography__Paragraph
+      ellipsis={true}
+    >
       <Typography__Span
         bold={true}
       >
