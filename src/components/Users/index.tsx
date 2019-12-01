@@ -2,11 +2,12 @@ import React, { useEffect, FunctionComponent } from 'react';
 import { useGetRequest } from 'src/hooks/useGetRequest';
 import styled from 'styled-components/macro';
 
-import { Paragraph } from 'src/components/Typography';
-import { UserCard, UserType } from 'src/components/UserCard';
-
 import { colors as themeColors } from 'src/theme';
 import { getRandomInt } from 'src/utils/NumberUtils';
+
+import { Paragraph } from 'src/components/Typography';
+import { UserCard, UserType } from 'src/components/UserCard';
+import { Carousel } from 'src/components/Carousel';
 
 const randomColorPicker = (): string => {
     return [themeColors.pink, themeColors.yellow, themeColors.darkGrey][
@@ -34,13 +35,15 @@ export const Users: FunctionComponent = () => {
             ) : isLoading ? (
                 <Paragraph>Loading</Paragraph>
             ) : (
-                data.results.map((user: UserType) => (
-                    <UserCard
-                        key={user.login.uuid}
-                        user={user}
-                        color={randomColorPicker()}
-                    />
-                ))
+                <Carousel>
+                    {data.results.map((user: UserType) => (
+                        <UserCard
+                            key={user.login.uuid}
+                            user={user}
+                            color={randomColorPicker()}
+                        />
+                    ))}
+                </Carousel>
             )}
         </UsersWrapper>
     );
