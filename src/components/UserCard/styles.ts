@@ -19,9 +19,10 @@ export const BottomHalf = styled.div`
     }) => white};
     padding: ${({
         theme: {
-            spacing: { medium, large },
+            globalPadding,
+            spacing: { large },
         },
-    }) => `${large} ${medium} ${medium} ${medium}`};
+    }) => `${large} ${globalPadding} ${large} ${globalPadding}`};
 `;
 
 export const ImageWrapper = styled.div`
