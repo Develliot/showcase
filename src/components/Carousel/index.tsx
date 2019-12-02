@@ -7,6 +7,8 @@ import {
     CarouselCard,
     CarouselScrollArea,
 } from './styles';
+import { VerticalSpacer } from 'src/components/Layout';
+import { Dots } from './Dots';
 
 type Props = {};
 
@@ -24,6 +26,17 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         };
     };
 
+    const scrollToPosition = (to: number) => {
+        if (!scrollRef || !scrollRef.current) {
+            return null;
+        }
+        const rect = scrollRef.current.getBoundingClientRect();
+        const width = rect.width;
+        const scrollPosition = Math.round(width * to);
+        scrollRef.current.scrollTo(scrollPosition, 0);
+        setCurrentPositon(to);
+    };
+
     const handleScroll = () => {
         if (!scrollRef || !scrollRef.current) {
             return null;
@@ -33,7 +46,6 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         const scrollPosition = getScroll().x;
         if (scrollPosition) {
             const currentPosition = Math.round(scrollPosition / width);
-            console.log(currentPosition);
             setCurrentPositon(currentPosition);
         }
     };
@@ -41,23 +53,31 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
     const handleScrollThrottled = _.throttle(handleScroll, 100);
 
     return (
-        <CarouselWrapper>
-            <CarouselScrollArea
-                ref={scrollRef}
-                onScroll={handleScrollThrottled}
-            >
-                {childArray.map((child, index) => {
-                    const isSelected = index === currentPosition;
-                    return (
-                        <CarouselCard key={index}>
-                            <CarouselCardInner isSelected={isSelected}>
-                                {child}
-                            </CarouselCardInner>
-                        </CarouselCard>
-                    );
-                })}
-            </CarouselScrollArea>
-        </CarouselWrapper>
+        <>
+            <CarouselWrapper>
+                <CarouselScrollArea
+                    ref={scrollRef}
+                    onScroll={handleScrollThrottled}
+                >
+                    {childArray.map((child, index) => {
+                        const isSelected = index === currentPosition;
+                        return (
+                            <CarouselCard key={index}>
+                                <CarouselCardInner isSelected={isSelected}>
+                                    {child}
+                                </CarouselCardInner>
+                            </CarouselCard>
+                        );
+                    })}
+                </CarouselScrollArea>
+            </CarouselWrapper>
+            <VerticalSpacer size='small' />
+            <Dots
+                count={childArray.length}
+                currentPosition={currentPosition}
+                scrollToPosition={scrollToPosition}
+            />
+        </>
     );
 };
 

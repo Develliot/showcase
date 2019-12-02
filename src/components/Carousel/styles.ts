@@ -28,3 +28,33 @@ export const CarouselCardInner = styled.div`
     transform: ${({ isSelected }: { isSelected: boolean }) =>
         isSelected ? 'scale(1)' : 'scale(0.85)'};
 `;
+
+export const DotContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+export const Dot = styled.button`
+    border: none;
+    padding: 0;
+    margin: ${({
+        theme: {
+            spacing: { tiny },
+        },
+    }) => tiny};
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: ${({
+        theme: {
+            colors: { white },
+        },
+    }) => white};
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: ${({ selected }: { selected: boolean }) => (selected ? 1 : 0.6)};
+
+    &:hover {
+        transform: scale(1.5);
+    }
+`;

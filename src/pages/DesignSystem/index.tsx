@@ -13,6 +13,7 @@ import { H1, H2, H3, Span, Paragraph } from 'src/components/Typography';
 import { Button } from 'src/components/Button';
 import { TextInput } from 'src/components/TextInput';
 import { UserCard } from 'src/components/UserCard';
+import { Carousel } from 'src/components/Carousel';
 
 import {
     TilesWrapper,
@@ -23,6 +24,30 @@ import {
 } from './styles';
 
 const colorLabelList = Object.keys(colors);
+
+const mockUser = {
+    email: 'angela.castro@example.com',
+    location: {
+        street: {
+            number: '8267',
+            name: 'Grove Road',
+        },
+        city: 'Stevenage',
+        state: 'Durham',
+        postcode: 'BD18 8JD',
+        coordinates: {
+            latitude: 61.2773,
+            longitude: 45.9598,
+        },
+    },
+    login: {
+        uuid: '1255d3c5-a9c8-414e-8eb5-127478a19f62',
+    },
+    name: { first: 'Angela', last: 'Castro' },
+    picture: {
+        large: 'https://randomuser.me/api/portraits/women/45.jpg',
+    },
+};
 
 export const DesignSystem = () => {
     return (
@@ -180,34 +205,18 @@ export const DesignSystem = () => {
                         <VerticalSpacer size='large' />
                         <H3 color='white'>User card</H3>
                         <VerticalSpacer size='medium' />
-                        <UserCard
-                            color='#A93F55'
-                            user={{
-                                email: 'angela.castro@example.com',
-                                location: {
-                                    street: {
-                                        number: '8267',
-                                        name: 'Grove Road',
-                                    },
-                                    city: 'Stevenage',
-                                    state: 'Durham',
-                                    postcode: 'BD18 8JD',
-                                    coordinates: {
-                                        latitude: 61.2773,
-                                        longitude: 45.9598,
-                                    },
-                                },
-                                login: {
-                                    uuid:
-                                        '1255d3c5-a9c8-414e-8eb5-127478a19f62',
-                                },
-                                name: { first: 'Angela', last: 'Castro' },
-                                picture: {
-                                    large:
-                                        'https://randomuser.me/api/portraits/women/45.jpg',
-                                },
-                            }}
-                        />
+                        <UserCard color={colors.pink} user={mockUser} />
+                        <VerticalSpacer size='large' />
+                        <H3 color='white'>
+                            Carousel (scrollable mobile friendly)
+                        </H3>
+                        <VerticalSpacer size='medium' />
+                        <Carousel>
+                            <UserCard color={colors.yellow} user={mockUser} />
+                            <UserCard color={colors.blue} user={mockUser} />
+                            <UserCard color={colors.pink} user={mockUser} />
+                            <UserCard color={colors.darkGrey} user={mockUser} />
+                        </Carousel>
                     </ContentWrapper>
                     <VerticalSpacer size='extraExtraLarge' />
                 </ColorBlock>
