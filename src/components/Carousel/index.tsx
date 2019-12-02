@@ -6,6 +6,8 @@ import {
     CarouselCardInner,
     CarouselCard,
     CarouselScrollArea,
+    CarouselFadeOutLeft,
+    CarouselFadeOutRight,
 } from './styles';
 import { VerticalSpacer } from 'src/components/Layout';
 import { Dots } from './Dots';
@@ -32,7 +34,7 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         }
         const rect = scrollRef.current.getBoundingClientRect();
         const width = rect.width;
-        const scrollPosition = Math.round(width * to);
+        const scrollPosition = Math.round(width * 0.8 * to);
         scrollRef.current.scrollTo(scrollPosition, 0);
         setCurrentPositon(to);
     };
@@ -45,12 +47,15 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         const width = rect.width;
         const scrollPosition = getScroll().x;
         if (scrollPosition) {
-            const currentPosition = Math.round(scrollPosition / width);
+            const currentPosition = Math.round(scrollPosition / (width * 0.8));
             setCurrentPositon(currentPosition);
         }
     };
 
     const handleScrollThrottled = _.throttle(handleScroll, 100);
+
+    const fadeLeftVisible = currentPosition !== childArray.length - 1;
+    const fadeRightVisible = currentPosition !== 0;
 
     return (
         <>
@@ -70,6 +75,8 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
                         );
                     })}
                 </CarouselScrollArea>
+                <CarouselFadeOutLeft visible={fadeLeftVisible} />
+                <CarouselFadeOutRight visible={fadeRightVisible} />
             </CarouselWrapper>
             <VerticalSpacer size='small' />
             <Dots

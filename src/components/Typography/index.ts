@@ -75,4 +75,6 @@ export const H3 = styled.h3`
             fontSizes: { extraLarge },
         },
     }: any) => (fontSize ? fontSize : extraLarge)};
+    text-overflow: ellipsis;
+    overflow: hidden;
 `;

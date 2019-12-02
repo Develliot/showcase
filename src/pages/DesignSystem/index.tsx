@@ -213,7 +213,7 @@ export const DesignSystem = () => {
                         <VerticalSpacer size='medium' />
                         <Carousel>
                             <UserCard color={colors.yellow} user={mockUser} />
-                            <UserCard color={colors.blue} user={mockUser} />
+                            <UserCard color={colors.darkGrey} user={mockUser} />
                             <UserCard color={colors.pink} user={mockUser} />
                             <UserCard color={colors.darkGrey} user={mockUser} />
                         </Carousel>

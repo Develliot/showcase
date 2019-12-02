@@ -46,6 +46,12 @@ exports[`renders correctly 1`] = `
         </styles__CarouselCardInner>
       </styles__CarouselCard>
     </styles__CarouselScrollArea>
+    <styles__CarouselFadeOutLeft
+      visible={true}
+    />
+    <styles__CarouselFadeOutRight
+      visible={false}
+    />
   </styles__CarouselWrapper>
   <Layout__VerticalSpacer
     size="small"
