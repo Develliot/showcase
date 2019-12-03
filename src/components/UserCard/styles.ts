@@ -22,7 +22,8 @@ export const BottomHalf = styled.div`
             globalPadding,
             spacing: { large },
         },
-    }) => `${large} ${globalPadding} ${large} ${globalPadding}`};
+    }) =>
+        `${large} calc(${globalPadding} / 2 ) ${large} calc(${globalPadding} / 2 )`};
 `;
 
 export const ImageWrapper = styled.div`
