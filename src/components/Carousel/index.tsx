@@ -12,9 +12,14 @@ import {
 import { VerticalSpacer } from 'src/components/Layout';
 import { Dots } from './Dots';
 
-type Props = {};
+type Props = {
+    onPositionChanged?: (postion: number) => void;
+};
 
-export const Carousel: FunctionComponent<Props> = ({ children }) => {
+export const Carousel: FunctionComponent<Props> = ({
+    children,
+    onPositionChanged,
+}) => {
     const [currentPosition, setCurrentPositon] = useState(0);
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -28,6 +33,14 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         };
     };
 
+    const setPosition = (to: number) => {
+        setCurrentPositon(to);
+
+        if (onPositionChanged) {
+            onPositionChanged(to);
+        }
+    };
+
     const scrollToPosition = (to: number) => {
         if (!scrollRef || !scrollRef.current) {
             return null;
@@ -36,7 +49,7 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         const width = rect.width;
         const scrollPosition = Math.round(width * 0.8 * to);
         scrollRef.current.scrollTo(scrollPosition, 0);
-        setCurrentPositon(to);
+        setPosition(to);
     };
 
     const handleScroll = () => {
@@ -48,7 +61,7 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
         const scrollPosition = getScroll().x;
         if (scrollPosition) {
             const currentPosition = Math.round(scrollPosition / (width * 0.8));
-            setCurrentPositon(currentPosition);
+            setPosition(currentPosition);
         }
     };
 
