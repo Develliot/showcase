@@ -15,6 +15,7 @@ import { TextInput } from 'src/components/TextInput';
 import { UserCard } from 'src/components/UserCard';
 import { UserCardLoading } from 'src/components/UserCard/UserCardLoading';
 import { Carousel } from 'src/components/Carousel';
+import { ErrorMessage } from 'src/components/ErrorMessage';
 
 import {
     TilesWrapper,
@@ -222,6 +223,14 @@ export const DesignSystem = () => {
                             <UserCard color={colors.pink} user={mockUser} />
                             <UserCard color={colors.darkGrey} user={mockUser} />
                         </Carousel>
+                        <VerticalSpacer size='large' />
+                        <H3 color='white'>Error message</H3>
+                        <VerticalSpacer size='medium' />
+                        <ErrorMessage
+                            errorMessage='This is an error message'
+                            retry={() => {}}
+                        />
+                        <VerticalSpacer size='large' />
                     </ContentWrapper>
                     <VerticalSpacer size='extraExtraLarge' />
                 </ColorBlock>
