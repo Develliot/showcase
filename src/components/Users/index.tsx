@@ -3,10 +3,10 @@ import React, { FunctionComponent, useContext } from 'react';
 import { colors as themeColors } from 'src/theme';
 import { UserContext } from 'src/contexts/UserContext';
 
-import { Paragraph } from 'src/components/Typography';
 import { UserCard } from 'src/components/UserCard';
 import { UserCardLoading } from 'src/components/UserCard/UserCardLoading';
 import { Carousel } from 'src/components/Carousel';
+import { ErrorMessage } from 'src/components/ErrorMessage';
 
 // types
 import { UserType } from 'src/containers/UsersContainer';
@@ -44,7 +44,10 @@ export const Users: FunctionComponent<Props> = ({
     return (
         <>
             {isError ? (
-                <Paragraph>Error retrieving user data</Paragraph>
+                <ErrorMessage
+                    errorMessage='Unable to retrieve user data'
+                    retry={retry}
+                />
             ) : isLoading ? (
                 <Carousel>
                     <UserCardLoading />
