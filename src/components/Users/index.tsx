@@ -3,16 +3,18 @@ import { useGetRequest } from 'src/hooks/useGetRequest';
 import styled from 'styled-components/macro';
 
 import { colors as themeColors } from 'src/theme';
-import { getRandomInt } from 'src/utils/NumberUtils';
 
 import { Paragraph } from 'src/components/Typography';
 import { UserCard, UserType } from 'src/components/UserCard';
 import { Carousel } from 'src/components/Carousel';
 
-const randomColorPicker = (): string => {
-    return [themeColors.pink, themeColors.yellow, themeColors.darkGrey][
-        getRandomInt(3)
+const chooseColor = (index: number): string => {
+    const availableColours = [
+        themeColors.pink,
+        themeColors.yellow,
+        themeColors.darkGrey,
     ];
+    return availableColours[index % availableColours.length];
 };
 
 const UsersWrapper = styled.div``;
@@ -36,11 +38,11 @@ export const Users: FunctionComponent = () => {
                 <Paragraph>Loading</Paragraph>
             ) : (
                 <Carousel>
-                    {data.results.map((user: UserType) => (
+                    {data.results.map((user: UserType, index: number) => (
                         <UserCard
                             key={user.login.uuid}
                             user={user}
-                            color={randomColorPicker()}
+                            color={chooseColor(index)}
                         />
                     ))}
                 </Carousel>
