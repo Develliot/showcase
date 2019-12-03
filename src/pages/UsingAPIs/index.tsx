@@ -7,7 +7,7 @@ import {
     VerticalSpacer,
     ColorBlock,
 } from 'src/components/Layout';
-import { Users } from 'src/components/Users';
+import UsersContainer from 'src/containers/UsersContainer';
 
 export const UsingAPIs = () => {
     return (
@@ -16,11 +16,11 @@ export const UsingAPIs = () => {
                 <ColorBlock color='blue'>
                     <ContentWrapper>
                         <VerticalSpacer size='extraExtraLarge' />
-                        <H1 color="white">Using APIs</H1>
+                        <H1 color='white'>Using APIs</H1>
                         <VerticalSpacer size='large' />
-                        <H2 color="white">Random User Data</H2>
+                        <H2 color='white'>Random User Data</H2>
                         <VerticalSpacer size='medium' />
-                        <Users />
+                        <UsersContainer />
                     </ContentWrapper>
                 </ColorBlock>
             </PageContent>

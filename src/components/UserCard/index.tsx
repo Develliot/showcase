@@ -3,6 +3,8 @@ import React from 'react';
 import { H3, Span, Paragraph } from 'src/components/Typography';
 import { VerticalSpacer, RowCenter } from 'src/components/Layout';
 
+import { UserType } from 'src/containers/UsersContainer';
+
 import {
     UserCardWrapper,
     CoverColor,
@@ -10,23 +12,6 @@ import {
     ImageContainer,
     BottomHalf,
 } from './styles';
-
-export type UserType = {
-    name: { first: string; last: string };
-    login: { uuid: string };
-    picture: { large: string };
-    email: string;
-    location: {
-        street: { number: string; name: string };
-        city: string;
-        state: string;
-        postcode: string;
-        coordinates: {
-            latitude: number;
-            longitude: number;
-        };
-    };
-};
 
 type Props = {
     user: UserType;

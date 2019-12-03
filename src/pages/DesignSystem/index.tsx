@@ -13,6 +13,7 @@ import { H1, H2, H3, Span, Paragraph } from 'src/components/Typography';
 import { Button } from 'src/components/Button';
 import { TextInput } from 'src/components/TextInput';
 import { UserCard } from 'src/components/UserCard';
+import { UserCardLoading } from 'src/components/UserCard/UserCardLoading';
 import { Carousel } from 'src/components/Carousel';
 
 import {
@@ -206,6 +207,10 @@ export const DesignSystem = () => {
                         <H3 color='white'>User card</H3>
                         <VerticalSpacer size='medium' />
                         <UserCard color={colors.pink} user={mockUser} />
+                        <VerticalSpacer size='large' />
+                        <H3 color='white'>User card loading</H3>
+                        <VerticalSpacer size='medium' />
+                        <UserCardLoading />
                         <VerticalSpacer size='large' />
                         <H3 color='white'>
                             Carousel (scrollable mobile friendly)

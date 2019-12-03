@@ -1,12 +1,15 @@
-import React, { useEffect, FunctionComponent } from 'react';
-import { useGetRequest } from 'src/hooks/useGetRequest';
-import styled from 'styled-components/macro';
+import React, { FunctionComponent, useContext } from 'react';
 
 import { colors as themeColors } from 'src/theme';
+import { UserContext } from 'src/contexts/UserContext';
 
 import { Paragraph } from 'src/components/Typography';
-import { UserCard, UserType } from 'src/components/UserCard';
+import { UserCard } from 'src/components/UserCard';
+import { UserCardLoading } from 'src/components/UserCard/UserCardLoading';
 import { Carousel } from 'src/components/Carousel';
+
+// types
+import { UserType } from 'src/containers/UsersContainer';
 
 const chooseColor = (index: number): string => {
     const availableColours = [
@@ -17,28 +20,40 @@ const chooseColor = (index: number): string => {
     return availableColours[index % availableColours.length];
 };
 
-const UsersWrapper = styled.div``;
+type Props = {
+    isError: boolean;
+    isLoading: boolean;
+    users: UserType[];
+    retry: () => void;
+};
 
-export const Users: FunctionComponent = () => {
-    const url =
-        'https://randomuser.me/api/?nat=gb&results=5&inc=name,email,login,location,picture&noinfo';
-    const [data, isLoading, isError, setUrl] = useGetRequest(url, {
-        results: [],
-    });
+export const Users: FunctionComponent<Props> = ({
+    isError,
+    isLoading,
+    users,
+    retry,
+}) => {
+    const [state, dispatch] = useContext(UserContext);
 
-    useEffect(() => {
-        setUrl(url);
-    }, [setUrl]);
+    const setCurrentPosition = (position: number): void => {
+        if (position !== state.selectedPosition) {
+            dispatch({ ...state, selectedPosition: position });
+        }
+    };
 
     return (
-        <UsersWrapper>
+        <>
             {isError ? (
                 <Paragraph>Error retrieving user data</Paragraph>
             ) : isLoading ? (
-                <Paragraph>Loading</Paragraph>
-            ) : (
                 <Carousel>
-                    {data.results.map((user: UserType, index: number) => (
+                    <UserCardLoading />
+                    <UserCardLoading />
+                    <UserCardLoading />
+                </Carousel>
+            ) : (
+                <Carousel onPositionChanged={setCurrentPosition}>
+                    {users.map((user: UserType, index: number) => (
                         <UserCard
                             key={user.login.uuid}
                             user={user}
@@ -47,7 +62,7 @@ export const Users: FunctionComponent = () => {
                     ))}
                 </Carousel>
             )}
-        </UsersWrapper>
+        </>
     );
 };
 
