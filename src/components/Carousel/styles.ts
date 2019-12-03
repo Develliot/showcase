@@ -20,7 +20,7 @@ export const CarouselFadeOutLeft = styled.div`
             colors: { blue },
         },
     }) =>
-        `linear-gradient(to left, ${blue} , rgba(0,0,0,0) 5%, rgba(0,0,0,0) 90%,  rgba(0,0,0,0) 5%, rgba(0,0,0,0))`};
+        `linear-gradient(to right, ${blue} , rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%)`};
 `;
 
 export const CarouselFadeOutRight = styled(CarouselFadeOutLeft)`
@@ -29,7 +29,7 @@ export const CarouselFadeOutRight = styled(CarouselFadeOutLeft)`
             colors: { blue },
         },
     }) =>
-        `linear-gradient(to left, rgba(0,0,0,0) , rgba(0,0,0,0) 5%, rgba(0,0,0,0) 90%,  rgba(0,0,0,0) 5%, ${blue})`};
+        `linear-gradient(to left, ${blue} , rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%)`};
 `;
 
 export const CarouselScrollArea = styled.div`

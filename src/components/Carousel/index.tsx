@@ -54,8 +54,8 @@ export const Carousel: FunctionComponent<Props> = ({ children }) => {
 
     const handleScrollThrottled = _.throttle(handleScroll, 100);
 
-    const fadeLeftVisible = currentPosition !== childArray.length - 1;
-    const fadeRightVisible = currentPosition !== 0;
+    const fadeRightVisible = currentPosition !== childArray.length - 1;
+    const fadeLeftVisible = currentPosition !== 0;
 
     return (
         <>
