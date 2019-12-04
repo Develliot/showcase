@@ -2,6 +2,11 @@ import React, { useEffect, useContext, FunctionComponent } from 'react';
 import { useGetRequest } from 'src/hooks/useGetRequest';
 import { UserContext } from 'src/contexts/UserContext';
 
+import {
+    scaleLatitudeGlobalToUK,
+    scaleLongitudeGlobalToUK,
+} from 'src/utils/NumberUtils';
+
 import { Users } from 'src/components/Users';
 
 export type UserType = {
@@ -29,16 +34,37 @@ export const UsersContainer: FunctionComponent = () => {
     const [data, isLoading, isError, setUrl] = useGetRequest(url, {
         results: [],
     });
-
     const [state, dispatch] = useContext(UserContext);
+
+    // the coordiates are random and sometimes not visible on the map with extreme latitudes,
+    // lets keep the randomness but restrict the scale to only the UK
+    const transformCoords = (users: UserType[]): UserType[] => {
+        return users.map(user => {
+            return {
+                ...user,
+                location: {
+                    ...user.location,
+                    coordinates: {
+                        latitude: scaleLatitudeGlobalToUK(
+                            user.location.coordinates.latitude
+                        ),
+                        longitude: scaleLongitudeGlobalToUK(
+                            user.location.coordinates.longitude
+                        ),
+                    },
+                },
+            };
+        });
+    };
 
     useEffect(() => {
         // only get mock user data if there is no exiting user data
         if (state.users.length === 0) {
             setUrl(url);
-            dispatch({ ...state, users: data.results });
+            const users = transformCoords(data.results);
+            dispatch({ ...state, users });
         }
-    }, [setUrl, data, dispatch, state]);
+    }, [setUrl, data]);
 
     const retry = (): void => {
         setUrl(url);

@@ -8,6 +8,7 @@ import {
     ColorBlock,
 } from 'src/components/Layout';
 import UsersContainer from 'src/containers/UsersContainer';
+import Map from 'src/components/Map';
 
 export const UsingAPIs = () => {
     return (
@@ -21,6 +22,8 @@ export const UsingAPIs = () => {
                         <H2 color='white'>Random User Data</H2>
                         <VerticalSpacer size='medium' />
                         <UsersContainer />
+                        <VerticalSpacer size='large' />
+                        <Map />
                     </ContentWrapper>
                 </ColorBlock>
             </PageContent>
