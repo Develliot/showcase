@@ -3,33 +3,7 @@ import GoogleMapReact, { Coords } from 'google-map-react';
 
 import { UserContext } from 'src/contexts/UserContext';
 
-import styled from 'styled-components/macro';
-
-const MapWrapper = styled.div`
-    width: 100%;
-    height: 300px;
-    background-color: ${({
-        theme: {
-            colors: { white },
-        },
-    }) => white};
-`;
-
-const MarkerWrapper = styled.div`
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: ${({
-        theme: {
-            colors: { darkGrey },
-        },
-    }) => `solid 1px ${darkGrey}`};
-`;
-const MarkerImage = styled.img`
-    height: 100%;
-    width: 100%;
-`;
+import { MapWrapper, MarkerImage, MarkerWrapper } from './styles';
 
 type MarkerProps = {
     lng: number;
