@@ -38,7 +38,7 @@ export const Map = () => {
                     key: 'AIzaSyCiVjDX7HFiFgzFxLrSz5LZAnBMzXl0CkU',
                 }}
                 center={newCenter}
-                defaultZoom={8}
+                defaultZoom={7}
             >
                 {state.users.map(user => (
                     <Marker
