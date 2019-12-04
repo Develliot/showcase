@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
       <Layout__RowCenter>
         <styles__ImageWrapper>
           <styles__ImageContainer
+            alt="User image"
             src="https://randomuser.me/api/portraits/women/45.jpg"
           />
         </styles__ImageWrapper>

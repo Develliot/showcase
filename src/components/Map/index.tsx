@@ -13,7 +13,7 @@ type MarkerProps = {
 const Marker = (props: MarkerProps) => {
     return (
         <MarkerWrapper>
-            <MarkerImage src={props.imageSrc} />
+            <MarkerImage src={props.imageSrc} alt='user image' />
         </MarkerWrapper>
     );
 };

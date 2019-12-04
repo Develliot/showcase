@@ -33,7 +33,10 @@ export const UserCard = ({
                 <CoverColor color={color}>
                     <RowCenter>
                         <ImageWrapper>
-                            <ImageContainer src={picture.large} />
+                            <ImageContainer
+                                src={picture.large}
+                                alt='User image'
+                            />
                         </ImageWrapper>
                     </RowCenter>
                 </CoverColor>

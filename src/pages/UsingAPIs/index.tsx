@@ -40,6 +40,7 @@ export const UsingAPIs = () => {
                             components passing props the whole way down the
                             component hierarchy.
                         </Paragraph>
+                        <VerticalSpacer size='small' />
                         <Paragraph>
                             The user data comes from the https://randomuser.me/
                             random user generator API. The coordinates are a bit
