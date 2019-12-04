@@ -36,7 +36,7 @@ export const UsersContainer: FunctionComponent = () => {
     });
     const [state, dispatch] = useContext(UserContext);
 
-    // the coordiates are random and sometimes not visible on the map with extreme latitudes,
+    // the coordinates are random and sometimes not visible on the map with extreme latitudes,
     // lets keep the randomness but restrict the scale to only the UK
     const transformCoords = (users: UserType[]): UserType[] => {
         return users.map(user => {
