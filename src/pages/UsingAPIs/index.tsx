@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { H1, H2 } from 'src/components/Typography';
+import { H1, H2, H3, Paragraph } from 'src/components/Typography';
 import { PageWrapper, PageContent } from 'src/components/Layout';
 import {
     ContentWrapper,
@@ -24,6 +24,43 @@ export const UsingAPIs = () => {
                         <UsersContainer />
                         <VerticalSpacer size='large' />
                         <Map />
+                    </ContentWrapper>
+                </ColorBlock>
+
+                <ColorBlock color='yellow'>
+                    <ContentWrapper>
+                        <VerticalSpacer size='extraExtraLarge' />
+                        <H3>Data strategy</H3>
+                        <VerticalSpacer size='medium' />
+                        <Paragraph>
+                            My aim was to use the context API as a data store,
+                            and create a reusable hook for making the HTTP
+                            requests. This was so components could observe the
+                            store and wouldn't be strongly coupled any parent
+                            components passing props the whole way down the
+                            component hierarchy.
+                        </Paragraph>
+                        <VerticalSpacer size='large' />
+                        <H3>Separating the data and display</H3>
+                        <VerticalSpacer size='medium' />
+                        <Paragraph>
+                            The request itself is triggered by the
+                            UsersContainer. The containers job is to perform the
+                            request via the hook and pump data into a
+                            userContext or pass error and loading states
+                            directly to the visible component.
+                        </Paragraph>
+                        <VerticalSpacer size='large' />
+                        <H3>Context API</H3>
+                        <VerticalSpacer size='medium' />
+                        <Paragraph>
+                            I don't think something like Redux was required for
+                            state management. Data from the URL request and the
+                            carousel's currently selected User are stored in the
+                            usersContext. The Map component knows which User
+                            Marker to scroll to when the index of the carousel
+                            changes by using the state from this context.
+                        </Paragraph>
                     </ContentWrapper>
                 </ColorBlock>
             </PageContent>
