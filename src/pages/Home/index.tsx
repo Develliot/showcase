@@ -25,7 +25,14 @@ export const Home = () => {
                             alternative to JS + Flow. This was also an exercise
                             to see if I could make a website using pure
                             functional components and hooks without touching
-                            classes and their life cycle functions.
+                            classes and their life cycle functions.{' '}
+                            <a
+                                target='_blank'
+                                href='https://github.com/Develliot/showcase'
+                            >
+                                Source code
+                            </a>
+                            .
                         </Paragraph>
                     </ContentWrapper>
                 </ColorBlock>
