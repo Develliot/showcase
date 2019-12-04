@@ -40,6 +40,14 @@ export const UsingAPIs = () => {
                             components passing props the whole way down the
                             component hierarchy.
                         </Paragraph>
+                        <Paragraph>
+                            The user data comes from the https://randomuser.me/
+                            random user generator API. The coordinates are a bit
+                            random so I have had to transform them from a global
+                            range to a UK range so point marks don't end up in
+                            weird places. The maps are from google maps
+                            Javascript API.
+                        </Paragraph>
                         <VerticalSpacer size='large' />
                         <H3>Separating the data and display</H3>
                         <VerticalSpacer size='medium' />
