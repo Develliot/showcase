@@ -8,19 +8,40 @@ import {
     CarouselScrollArea,
     CarouselFadeOutLeft,
     CarouselFadeOutRight,
+    LeftButtonContainer,
+    RightButtonContainer,
+    CarouselButton,
 } from './styles';
 import { VerticalSpacer } from 'src/components/Layout';
 import { Dots } from './Dots';
 
 type Props = {
-    onPositionChanged?: (postion: number) => void;
+    onPositionChanged?: (position: number) => void;
 };
+
+export const CarouselLeftButton = ({ onClick }: { onClick: () => void }) => (
+    <LeftButtonContainer>
+        <CarouselButton
+            onClick={onClick}
+            aria-label='previous user'
+        >{`◀`}</CarouselButton>
+    </LeftButtonContainer>
+);
+
+export const CarouselRightButton = ({ onClick }: { onClick: () => void }) => (
+    <RightButtonContainer>
+        <CarouselButton
+            onClick={onClick}
+            aria-label='next user'
+        >{`▶`}</CarouselButton>
+    </RightButtonContainer>
+);
 
 export const Carousel: FunctionComponent<Props> = ({
     children,
     onPositionChanged,
 }) => {
-    const [currentPosition, setCurrentPositon] = useState(0);
+    const [currentPosition, setCurrentPosition] = useState(0);
     const scrollRef = useRef<HTMLDivElement>(null);
 
     // remove null children
@@ -34,7 +55,7 @@ export const Carousel: FunctionComponent<Props> = ({
     };
 
     const setPosition = (to: number) => {
-        setCurrentPositon(to);
+        setCurrentPosition(to);
 
         if (onPositionChanged) {
             onPositionChanged(to);
@@ -42,13 +63,12 @@ export const Carousel: FunctionComponent<Props> = ({
     };
 
     const scrollToPosition = (to: number) => {
-        if (!scrollRef || !scrollRef.current) {
-            return null;
+        if (scrollRef && scrollRef.current) {
+            const rect = scrollRef.current.getBoundingClientRect();
+            const width = rect.width;
+            const scrollPosition = Math.round(width * 0.8 * to);
+            scrollRef.current.scrollTo(scrollPosition, 0);
         }
-        const rect = scrollRef.current.getBoundingClientRect();
-        const width = rect.width;
-        const scrollPosition = Math.round(width * 0.8 * to);
-        scrollRef.current.scrollTo(scrollPosition, 0);
         setPosition(to);
     };
 
@@ -67,8 +87,8 @@ export const Carousel: FunctionComponent<Props> = ({
 
     const handleScrollThrottled = _.throttle(handleScroll, 100);
 
-    const fadeRightVisible = currentPosition !== childArray.length - 1;
-    const fadeLeftVisible = currentPosition !== 0;
+    const moreOnRight = currentPosition !== childArray.length - 1;
+    const moreOnLeft = currentPosition !== 0;
 
     return (
         <>
@@ -88,8 +108,27 @@ export const Carousel: FunctionComponent<Props> = ({
                         );
                     })}
                 </CarouselScrollArea>
-                <CarouselFadeOutLeft visible={fadeLeftVisible} />
-                <CarouselFadeOutRight visible={fadeRightVisible} />
+                <CarouselFadeOutLeft visible={moreOnLeft} />
+                <CarouselFadeOutRight visible={moreOnRight} />
+                {moreOnLeft ? (
+                    <CarouselLeftButton
+                        onClick={() => {
+                            scrollToPosition(Math.max(0, currentPosition - 1));
+                        }}
+                    />
+                ) : null}
+                {moreOnRight ? (
+                    <CarouselRightButton
+                        onClick={() => {
+                            scrollToPosition(
+                                Math.min(
+                                    currentPosition + 1,
+                                    childArray.length - 1
+                                )
+                            );
+                        }}
+                    />
+                ) : null}
             </CarouselWrapper>
             <VerticalSpacer size='small' />
             <Dots

@@ -36,7 +36,7 @@ export const CarouselScrollArea = styled.div`
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-
+    scroll-behavior: smooth;
     white-space: nowrap;
     /* to hides */
     padding-bottom: 20px;
@@ -56,11 +56,41 @@ export const CarouselCardInner = styled.div`
         isSelected ? 'scale(1)' : 'scale(0.85)'};
 `;
 
+export const LeftButtonContainer = styled.div`
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    bottom: 0;
+`;
+
+export const RightButtonContainer = styled(LeftButtonContainer)`
+    left: auto;
+    right: 0;
+`;
+
+export const CarouselButton = styled.button`
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: ${({
+        theme: {
+            colors: { white },
+        },
+    }) => white};
+    font-size: ${({
+        theme: {
+            fontSizes: { large },
+        },
+    }) => large};
+    font-weight: 600;
+`;
+
 export const DotContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
 `;
+
 export const Dot = styled.button`
     border: none;
     padding: 0;
