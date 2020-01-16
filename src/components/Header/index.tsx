@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 
-import { useScrollPosition } from 'src/hooks/UseScrollPosition';
+import { useScrollPosition } from 'src/hooks/useScrollPosition';
 import urls from 'src/urls';
 
 import { H2 } from 'src/components/Typography';

@@ -1,5 +1,5 @@
 import React, { useState, useRef, FunctionComponent } from 'react';
-import { useScrollPosition } from 'src/hooks/UseScrollPosition';
+import { useScrollPosition } from 'src/hooks/useScrollPosition';
 import { ContentWrapperStyled } from './styles';
 
 export const AnimatedContentWrapper: FunctionComponent = ({ children }) => {
