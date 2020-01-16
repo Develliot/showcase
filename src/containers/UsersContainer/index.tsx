@@ -31,7 +31,7 @@ export type UserType = {
 export const UsersContainer: FunctionComponent = () => {
     const url =
         'https://randomuser.me/api/?nat=gb&results=5&inc=name,email,login,location,picture&noinfo';
-    const [data, isLoading, isError, setUrl] = useGetRequest(url, {
+    const { data, isLoading, isError, setUrl } = useGetRequest(url, {
         results: [],
     });
     const [state, dispatch] = useContext(UserContext);
@@ -64,7 +64,7 @@ export const UsersContainer: FunctionComponent = () => {
             const users = transformCoords(data.results);
             dispatch({ ...state, users });
         }
-    }, [setUrl, data]);
+    }, [setUrl, data, dispatch, state]);
 
     const retry = (): void => {
         setUrl(url);

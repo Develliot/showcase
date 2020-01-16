@@ -7,22 +7,23 @@ export const useGetRequest = (initialUrl: string, initialData: any) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
+    const fetchData = async (url: string) => {
+        setIsError(false);
+        setIsLoading(true);
+        try {
+            const result = await axios(url);
+            setData(result.data);
+        } catch (error) {
+            setIsError(true);
+        }
+        setIsLoading(false);
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            setIsError(false);
-            setIsLoading(true);
-            try {
-                const result = await axios(url);
-                setData(result.data);
-            } catch (error) {
-                setIsError(true);
-            }
-            setIsLoading(false);
-        };
-        fetchData();
+        fetchData(url);
     }, [url]);
 
-    return [data, isLoading, isError, setUrl];
+    return { data, isLoading, isError, setUrl };
 };
 
 export default useGetRequest;
