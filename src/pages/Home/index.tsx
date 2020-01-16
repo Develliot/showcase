@@ -28,6 +28,7 @@ export const Home = () => {
                             classes and their life cycle functions.{' '}
                             <a
                                 target='_blank'
+                                rel='noopener noreferrer'
                                 href='https://github.com/Develliot/showcase'
                             >
                                 Source code
