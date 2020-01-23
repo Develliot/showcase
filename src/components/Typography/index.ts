@@ -26,8 +26,8 @@ const baseText = (props: BaseTextProps) => `
     };
     line-height: 1.5em;
     font-weight: ${!!props.bold ? 700 : 400};
-    overflow: ${!!props.ellipsis ? 'hidden' : 'visible'}
-    text-overflow: ${!!props.ellipsis ? 'ellipsis' : 'unset'}
+    overflow: ${!!props.ellipsis ? 'hidden' : 'visible'};
+    text-overflow: ${!!props.ellipsis ? 'ellipsis' : 'unset'};
 `;
 
 export const Span = styled.span`
